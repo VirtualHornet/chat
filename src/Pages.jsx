@@ -21,6 +21,7 @@ function Pages (){
 
     return(
         <Routes>
+            <Route path="/chat/" element={<Navigate replace to='/chat/login' />}/> 
             <Route path="/chat/registration" element={loggedIn ?<Navigate replace to='/chat/:id' />: <Sign onLogin={handleLogin} />}/>
             <Route path="/chat/login" element={loggedIn ? <Navigate replace to='/chat/:id' /> : <Login onLogin={handleLogin} />}/>
             <Route path="/chat/:id" element={loggedIn?<Data onLogout={handleLogout}/>:<Navigate replace to='/chat/login' />}/> 
